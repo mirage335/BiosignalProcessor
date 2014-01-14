@@ -1,0 +1,275 @@
+The system is: Linux - 3.8.13-gentoo - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/2.8.12/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/2.8.12/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1090021531/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1090021531.dir/build.make CMakeFiles/cmTryCompileExec1090021531.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1090021531.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1090021531.dir/testCCompiler.c.o   -c /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec1090021531
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1090021531.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1090021531.dir/testCCompiler.c.o  -o cmTryCompileExec1090021531 -rdynamic 
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec127444613/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec127444613.dir/build.make CMakeFiles/cmTryCompileExec127444613.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec127444613
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec127444613.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec127444613 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4/gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../gcc-4.6.4/configure --disable-libssp --enable-multilib --enable-version-specific-runtime-libs --enable-libmudflap --prefix=/usr --bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include/g++-v4.6 --enable-__cxa_atexit --enable-clocale=gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --disable-ppl --disable-cloog --with-system-zlib --enable-obsolete --disable-werror --enable-secureplt --disable-lto --with-bugurl=http://bugs.funtoo.org --with-pkgversion='Funtoo 4.6.4-r2' --with-mpfr-include=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/gcc-4.6.4/mpfr/src --with-mpfr-lib=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/objdir/mpfr/src/.libs --enable-libstdcxx-time --enable-libgomp --enable-languages=c,c++,fortran --disable-libgcj --disable-esp
+Thread model: posix
+gcc version 4.6.4 (Funtoo 4.6.4-r2) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec127444613' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec127444613 /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../.. CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec127444613/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec127444613.dir/build.make CMakeFiles/cmTryCompileExec127444613.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec127444613]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec127444613.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec127444613 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../gcc-4.6.4/configure --disable-libssp --enable-multilib --enable-version-specific-runtime-libs --enable-libmudflap --prefix=/usr --bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include/g++-v4.6 --enable-__cxa_atexit --enable-clocale=gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --disable-ppl --disable-cloog --with-system-zlib --enable-obsolete --disable-werror --enable-secureplt --disable-lto --with-bugurl=http://bugs.funtoo.org --with-pkgversion='Funtoo 4.6.4-r2' --with-mpfr-include=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/gcc-4.6.4/mpfr/src --with-mpfr-lib=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/objdir/mpfr/src/.libs --enable-libstdcxx-time --enable-libgomp --enable-languages=c,c++,fortran --disable-libgcj --disable-esp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.6.4 (Funtoo 4.6.4-r2) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec127444613' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec127444613 /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../.. CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec127444613] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..]
+    arg [CMakeFiles/cmTryCompileExec127444613.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib] ==> [/usr/x86_64-pc-linux-gnu/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4;/usr/lib64;/lib64;/usr/x86_64-pc-linux-gnu/lib;/usr/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3527624866/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3527624866.dir/build.make CMakeFiles/cmTryCompileExec3527624866.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3527624866.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3527624866.dir/testCXXCompiler.cxx.o -c /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec3527624866
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3527624866.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec3527624866.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3527624866 -rdynamic 
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec4282459649/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec4282459649.dir/build.make CMakeFiles/cmTryCompileExec4282459649.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec4282459649
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4282459649.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4282459649 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4/c++
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../gcc-4.6.4/configure --disable-libssp --enable-multilib --enable-version-specific-runtime-libs --enable-libmudflap --prefix=/usr --bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include/g++-v4.6 --enable-__cxa_atexit --enable-clocale=gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --disable-ppl --disable-cloog --with-system-zlib --enable-obsolete --disable-werror --enable-secureplt --disable-lto --with-bugurl=http://bugs.funtoo.org --with-pkgversion='Funtoo 4.6.4-r2' --with-mpfr-include=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/gcc-4.6.4/mpfr/src --with-mpfr-lib=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/objdir/mpfr/src/.libs --enable-libstdcxx-time --enable-libgomp --enable-languages=c,c++,fortran --disable-libgcj --disable-esp
+Thread model: posix
+gcc version 4.6.4 (Funtoo 4.6.4-r2) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4282459649' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec4282459649 /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../.. CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec4282459649/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec4282459649.dir/build.make CMakeFiles/cmTryCompileExec4282459649.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec4282459649]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4282459649.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4282459649 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../gcc-4.6.4/configure --disable-libssp --enable-multilib --enable-version-specific-runtime-libs --enable-libmudflap --prefix=/usr --bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.6.4/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/include/g++-v4.6 --enable-__cxa_atexit --enable-clocale=gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --disable-ppl --disable-cloog --with-system-zlib --enable-obsolete --disable-werror --enable-secureplt --disable-lto --with-bugurl=http://bugs.funtoo.org --with-pkgversion='Funtoo 4.6.4-r2' --with-mpfr-include=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/gcc-4.6.4/mpfr/src --with-mpfr-lib=/var/tmp/portage/sys-devel/gcc-4.6.4-r2/work/objdir/mpfr/src/.libs --enable-libstdcxx-time --enable-libgomp --enable-languages=c,c++,fortran --disable-libgcj --disable-esp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.6.4 (Funtoo 4.6.4-r2) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/libexec/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4282459649' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec4282459649 /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../.. CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-pc-linux-gnu/4.6.4/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec4282459649] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..]
+    arg [CMakeFiles/cmTryCompileExec4282459649.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../../../x86_64-pc-linux-gnu/lib] ==> [/usr/x86_64-pc-linux-gnu/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/4.6.4;/usr/lib64;/lib64;/usr/x86_64-pc-linux-gnu/lib;/usr/lib]
+  implicit fwks: []
+
+
+Determining if files malloc.h exist passed with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2724294536/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2724294536.dir/build.make CMakeFiles/cmTryCompileExec2724294536.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2724294536.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -Wall -Wextra -fmessage-length=0    -o CMakeFiles/cmTryCompileExec2724294536.dir/CheckIncludeFiles.c.o   -c /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2724294536
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2724294536.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -Wextra -fmessage-length=0     CMakeFiles/cmTryCompileExec2724294536.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2724294536 -rdynamic 
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Debug/CMakeFiles/CMakeTmp'
+
+
+Determining if files malloc.h exist passed with the following output:
+Change Dir: /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1126303908/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1126303908.dir/build.make CMakeFiles/cmTryCompileExec1126303908.dir/build
+gmake[1]: Entering directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Debug/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Debug/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1126303908.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -Wall -Wextra -fmessage-length=0    -o CMakeFiles/cmTryCompileExec1126303908.dir/CheckIncludeFiles.c.o   -c /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1126303908
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1126303908.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -Wextra -fmessage-length=0     CMakeFiles/cmTryCompileExec1126303908.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1126303908 -rdynamic 
+gmake[1]: Leaving directory `/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Debug/CMakeFiles/CMakeTmp'
+
+

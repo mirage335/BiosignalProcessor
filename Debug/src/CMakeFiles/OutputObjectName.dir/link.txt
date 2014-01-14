@@ -1,0 +1,1 @@
+/usr/bin/cc   -Wall -Wextra -fmessage-length=0 -DDEBUG -DVERBOSE    CMakeFiles/OutputObjectName.dir/source.c.o  -o OutputObjectName -rdynamic 

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/src/source.c
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+string.h
+-
+ctype.h
+-
+sys/types.h
+-
+dirent.h
+-
+sys/stat.h
+-
+pwd.h
+-
+grp.h
+-
+time.h
+-
+unistd.h
+-
+libgen.h
+-
+fcntl.h
+-
+stdarg.h
+-
+sndfile.h
+-
+sys/mkdev.h
+-
+
