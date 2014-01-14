@@ -87,6 +87,7 @@ OutputObjectName_EXTERNAL_OBJECTS =
 
 src/OutputObjectName: src/CMakeFiles/OutputObjectName.dir/source.c.o
 src/OutputObjectName: src/CMakeFiles/OutputObjectName.dir/build.make
+src/OutputObjectName: /usr/lib64/libsndfile.so
 src/OutputObjectName: src/CMakeFiles/OutputObjectName.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable OutputObjectName"
 	cd /home/commonadmin/FSGateway/Projects/Current/BiosignalProcessor/Code/Pedantic/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OutputObjectName.dir/link.txt --verbose=$(VERBOSE)
