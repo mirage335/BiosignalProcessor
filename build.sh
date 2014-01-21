@@ -47,3 +47,5 @@ mkdir -p ./Pedantic
 cd ./Pedantic
 readableCMake -DCMAKE_BUILD_TYPE=Pedantic ../
 readableMake
+
+echo -e '\E[1;32;46m Compilation finished. \E[0m'

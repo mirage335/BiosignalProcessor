@@ -14,10 +14,10 @@ endif(NOT(DEFINED CMAKE_GENERATOR))
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -fmessage-length=0")
 
 # Set compiler flags used for debugging.
-SET(CMAKE_C_FLAGS_DEBUG "-DDEBUG -DVERBOSE")
+SET(CMAKE_C_FLAGS_DEBUG "-g -DDEBUG -DVERBOSE")
 
 # Set compiler flags for pedantic compilation.
-SET (CMAKE_C_FLAGS_PEDANTIC "-pedantic")
+SET (CMAKE_C_FLAGS_PEDANTIC "-g -pedantic")
 
 #Allow eclipse to discover include directories.
 SET(CMAKE_VERBOSE_MAKEFILE ON)
