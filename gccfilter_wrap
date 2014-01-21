@@ -1,3 +1,9 @@
 #!/bin/sh
-# Colorize GCC output. Taken from http://stackoverflow.com/questions/14399984/make-cmake-use-gccfilter . Public domain or fair use assumed.
-exec gccfilter -a -c "$@"
+# Colorize GCC output. Adapted from http://stackoverflow.com/questions/14399984/make-cmake-use-gccfilter . Public domain or fair use assumed.
+
+if [[ -e $(which gccfilter) ]]
+then
+	exec gccfilter -a -c "$@"
+else
+	exec gcc
+fi
