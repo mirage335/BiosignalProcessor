@@ -1,6 +1,10 @@
 cmake_minimum_required (VERSION 2.6) # Required cmake version.
 project (PROJECT_NAME)	#BiosignalProcessor Name
 
+# Colorize GCC output. Taken from http://stackoverflow.com/questions/14399984/make-cmake-use-gccfilter . Public domain or fair use assumed.
+set_directory_properties(PROPERTIES RULE_LAUNCH_COMPILE
+   "${PROJECT_SOURCE_DIR}/gccfilter_wrap")
+
 #Default CMAKE_GENERATOR should be the quite standard and ubiquitous Unix Makefiles.
 if(NOT(DEFINED CMAKE_GENERATOR))
 SET(CMAKE_GENERATOR "Unix Makefiles")

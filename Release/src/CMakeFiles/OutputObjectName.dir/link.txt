@@ -1,1 +1,0 @@
-/usr/bin/cc   -Wall -Wextra -fmessage-length=0 -O3 -DNDEBUG    CMakeFiles/OutputObjectName.dir/source.c.o  -o OutputObjectName -rdynamic -lsndfile 
