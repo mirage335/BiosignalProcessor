@@ -11,7 +11,7 @@ cmake -DCMAKE_BUILD_TYPE=Release ../
 
 #Produces out-of-source build in Debug folder.
 cd "$scriptAbsoluteFolder"
-mkdir -P ./Debug
+mkdir -p ./Debug
 cd ./Debug
 cmake -DCMAKE_BUILD_TYPE=Debug ../
 
