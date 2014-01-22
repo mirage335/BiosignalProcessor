@@ -196,30 +196,47 @@ void constructGlobalVariables() {
 
 //Macro function for low pass filter.
 //Overuse can cause data and precision loss, especially with non-float variables. Additionally, this filter's passband may not be flat.
+//State variable filteredValue should be statically declared.
 #define lowPass(newValue, filteredValue, inertiaFloat)                            \
   filteredValue = filteredValue + (inertiaFloat * (newValue - filteredValue));
 
 //IIR Biquad Filter.
 //Parameters b0, b1, b2, a1, a2 are filter coefficients. See http://gnuradio.4.n7.nabble.com/IIR-filter-td40994.html and http://www.earlevel.com/main/2013/10/13/biquad-calculator-v2/ .
-//Data is returned in the double named [filteredValue] .
-#define IIRbiquad(newValue, filteredValue, unique_d1_name, unique_d2_name, b0, b1, b2, a1, a2)					\
-	static double filteredValue = 0;							\
-	static double unique_d1_name = 0;									\
-	static double unique_d2_name = 0;									\
-												\
-	filteredValue = b0 * newValue + unique_d1_name;							\
-	unique_d1_name = (double)b1 * (double)newValue + (double)a1 * filteredValue + (double)unique_d2_name; 		\
+//Data is returned in the double named [filteredValue] . This variable must be externally declared.
+//State variables unique_d1_name and unique_d2_name should be statically declared doubles.
+#define IIRbiquad(newValue, filteredValue, unique_d1_name, unique_d2_name, b0, b1, b2, a1, a2)			\
+														\
+	filteredValue = b0 * newValue + unique_d1_name;								\
+	unique_d1_name = (double)b1 * (double)newValue + (double)a1 * filteredValue + unique_d2_name; 	\
 	unique_d2_name = (double)b2 * (double)newValue + (double)a2 * filteredValue;
+
+//High Order IIR Biquad Filter.
+//Parameters b0, b1, b2, a1, a2 are filter coefficients. See http://gnuradio.4.n7.nabble.com/IIR-filter-td40994.html and http://www.earlevel.com/main/2013/10/13/biquad-calculator-v2/ .
+//Data is returned in the double named [filteredValue] .
+#define highOrderIIRbiquad(newValue, filteredValue, stateOneArrayName, stateTwoArrayName, b0, b1, b2, a1, a2, filterOrder)	\
+	static double stateOneArrayName[(filterOrder+1)];									\
+	static double stateTwoArrayName[(filterOrder+1)];									\
+																\
+	static int filterLoop;													\
+																\
+	static double lowerOrderFilteredValue;											\
+	lowerOrderFilteredValue = newValue;											\
+																\
+	for (filterLoop=0; filterLoop < filterOrder; filterLoop++) {								\
+		IIRbiquad(lowerOrderFilteredValue, filteredValue, stateOneArrayName[filterLoop], stateTwoArrayName[filterLoop], b0, b1, b2, a1, a2) \
+		lowerOrderFilteredValue = filteredValue;									\
+	}															\
   
 //Core DSP processing chain.
 inline double processData(double newData) {
 	
-	IIRbiquad(newData, filteredData, firstD1, firstD2, 0.0004944331277135562, 0, -0.0004944331277135562, 0.29089453130818355, -0.9990111337445728);
+	static double filteredData = 0;
+	
+	highOrderIIRbiquad(newData, filteredData, firstStateOne, firstStateTwo, 0.0004944331277135562, 0, -0.0004944331277135562, 0.29089453130818355, -0.9990111337445728, 100);
 	
 	#ifdef VERBOSE
 	printf("%1.32f\n", newData);
 	#endif
-	
 	
 	return filteredData * 1000000;
 } //end processData
@@ -329,8 +346,7 @@ int main (int argc, char *argv[]) {
 	while ((readcount = sf_readf_double(infile, readBuf, BLOCK_SIZE)) > 0)
 	{	for (k = 0 ; k < readcount ; k++)
 		{	for (m = 0 ; m < 1 ; m++)
-				//Read data out to processing function (DSP chain) one double precision float at a time.
-				writeBuf[k * 1 + m] = processData(readBuf[k * 1 + m]);
+				writeBuf[k * 1 + m] = processData(readBuf[k * 1 + m]);	//Read data out to processing function (DSP chain) one double precision float at a time.
 		}
 		
 		//Write out buffer to file.
