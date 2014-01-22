@@ -303,7 +303,7 @@ int main (int argc, char *argv[]) {
 		return ProcessOperationNotPermitted ;
 	}
 	
-	if ((outfile = sf_open ("-", SFM_WRITE, &out_sfinfo)) == NULL) {
+	if ((outfile = sf_open (programOptions.outFileName, SFM_WRITE, &out_sfinfo)) == NULL) {
 		printf ("Invalid output file.\n") ;
 		puts (sf_strerror (NULL)) ;
 		return ProcessOperationNotPermitted ;
