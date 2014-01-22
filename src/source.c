@@ -199,6 +199,31 @@ void constructGlobalVariables() {
 #define lowPass(newValue, filteredValue, inertiaFloat)                            \
   filteredValue = filteredValue + (inertiaFloat * (newValue - filteredValue));
 
+//IIR Biquad Filter.
+//Parameters b0, b1, b2, a1, a2 are filter coefficients. See http://gnuradio.4.n7.nabble.com/IIR-filter-td40994.html and http://www.earlevel.com/main/2013/10/13/biquad-calculator-v2/ .
+//Data is returned in the double named [filteredValue] .
+#define IIRbiquad(newValue, filteredValue, unique_d1_name, unique_d2_name, b0, b1, b2, a1, a2)					\
+	static double filteredValue = 0;							\
+	static double unique_d1_name = 0;									\
+	static double unique_d2_name = 0;									\
+												\
+	filteredValue = b0 * newValue + unique_d1_name;							\
+	unique_d1_name = (double)b1 * (double)newValue + (double)a1 * filteredValue + (double)unique_d2_name; 		\
+	unique_d2_name = (double)b2 * (double)newValue + (double)a2 * filteredValue;
+  
+//Core DSP processing chain.
+inline double processData(double newData) {
+	
+	IIRbiquad(newData, filteredData, firstD1, firstD2, 0.0004944331277135562, 0, -0.0004944331277135562, 0.29089453130818355, -0.9990111337445728);
+	
+	#ifdef VERBOSE
+	printf("%1.32f\n", newData);
+	#endif
+	
+	
+	return filteredData * 1000000;
+} //end processData
+
 void helpMessage() {
 	printf("-i --inputFile		S32_LE audio input file. \"-\" for standard input (default)\n");
 	printf("-o --outputFile		S32_LE audio output file. \"-\" for standard output (default)\n");
@@ -258,19 +283,6 @@ void optionProcessor(int argc, char *argv[]) {
 		}
 	}
 } //end optionProcessor
-
-//Core DSP processing chain.
-inline double processData(double newData) {
-	
-	static float filteredValue=0;
-	filteredValue=newData;
-	
-	#ifdef VERBOSE
-	printf("%1.32f\n", newData);
-	#endif
-	
-	return filteredValue * 10000;
-} //end processData
 
 //Program entry point.
 int main (int argc, char *argv[]) {
