@@ -26,7 +26,7 @@ readableCMake() {
 	fi
 }
 
-
+echo -e '\E[1;32;46m Compiling: Release. \E[0m'
 #Produces out-of-source build in Release folder.
 cd "$scriptAbsoluteFolder"
 mkdir -p ./Release
@@ -34,6 +34,7 @@ cd ./Release
 readableCMake -DCMAKE_BUILD_TYPE=Release ../
 readableMake
 
+echo -e '\E[1;32;46m Compiling: Debug \E[0m'
 #Produces out-of-source build in Debug folder.
 cd "$scriptAbsoluteFolder"
 mkdir -p ./Debug
@@ -41,6 +42,7 @@ cd ./Debug
 readableCMake -DCMAKE_BUILD_TYPE=Debug ../
 readableMake
 
+echo -e '\E[1;32;46m Compiling: Pedantic \E[0m'
 #Produces out-of-source build in Pedantic folder.
 cd "$scriptAbsoluteFolder"
 mkdir -p ./Pedantic

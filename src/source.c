@@ -29,6 +29,7 @@ extern __pid_t getsid (__pid_t __pid) __THROW;
 #include <libgen.h>
 #include <fcntl.h>
 #include <stdarg.h>
+#include <getopt.h>
 
 #include <sndfile.h>
 
@@ -55,16 +56,16 @@ typedef enum { false = 0, true = 1 } bool;											//Emulates boolean function
 
 //Stores the program options.
 typedef struct {
-	bool optionOne;																	//Signals the "?" option.
-	bool optionTwo;																	//Signals the "?" option.
+	char *inFileName;													//In file name.
+	char *outFileName;													//Out file name.
 } PROGRAM_OPTIONS;
 
 
 //LABEL Global constructor functions.
 PROGRAM_OPTIONS createPROGRAM_OPTIONS() {
 	PROGRAM_OPTIONS prototypeProgramOptions;
-	prototypeProgramOptions.optionOne = false;
-	prototypeProgramOptions.optionTwo = false;
+	prototypeProgramOptions.inFileName = "-";										//Standard input default.
+	prototypeProgramOptions.outFileName = "-";										//Standard output default.
 	return prototypeProgramOptions;
 } //end createPROGRAM_OPTIONS
 
@@ -194,62 +195,135 @@ void constructGlobalVariables() {
 //LABEL General program functions start here.
 
 //Macro function for low pass filter.
-//Overuse can cause data and precision loss, especially with non-float variables.
+//Overuse can cause data and precision loss, especially with non-float variables. Additionally, this filter's passband may not be flat.
 #define lowPass(newValue, filteredValue, inertiaFloat)                            \
   filteredValue = filteredValue + (inertiaFloat * (newValue - filteredValue));
 
-//Automatically cascades low pass filters, returning the final value as arrayName[filterLoop] .
-//The arrayName is not important, however, the array must retain values from one cycle to the next (ie. static).
-#define highOrderLowPass(newValue, inertiaFloat, filterOrder, arrayName)          \
-  static float arrayName[(filterOrder+1)];                                        \
-  arrayName[0] = newValue;                                                        \
-  static int filterLoop;                                                          \
-  for (filterLoop=0; filterLoop < filterOrder; filterLoop++)                      \
-    lowPass(arrayName[filterLoop], arrayName[filterLoop+1], inertiaFloat);
+void helpMessage() {
+	printf("-i --inputFile		S32_LE audio input file. \"-\" for standard input (default)\n");
+	printf("-o --outputFile		S32_LE audio output file. \"-\" for standard output (default)\n");
+}
 
+//Processes command line arguments with getopt, storing results in global programOptions variable.
+void optionProcessor(int argc, char *argv[]) {
+	while (1) {
+	
+		//Structure defining long options. These are passed with double dashes.
+		static struct option long_options[] = {
+			//Format: {"longarg", argument_requirement, flag, value/index},...{}
+			{"inputFile", required_argument,       0, 'i'},
+			{"outputFile", required_argument,       0, 'o'},
+			{"help", no_argument,       0, 'h'},
+			{0,         0,                 0,  0}
+		};
+		
+		/* getopt_long stores the option index here. */
+		int option_index = 0; //Initialize variable.
+		int c = getopt_long (argc, argv, "i:o:h", long_options, &option_index); //The colons indicate which arguments take parameters. One for required, two for optional.
+		
+		/* Detect the end of the options. */
+		if (c == -1)
+			break;
+		
+		//Switch statement detects options by their indices.
+		switch (c) {
+			case 0:
+				#ifdef DEBUG
+				printf("option %s", long_options[option_index].name);
+				if (optarg)
+					printf(" with arg %s", optarg);
+				#endif
+				/* If this option set a flag, do nothing else now. */
+				if (long_options[option_index].flag != 0)
+					break;
+				
+			case 'i':
+				programOptions.inFileName = optarg;
+				break;
+			
+			case 'o':
+				programOptions.outFileName = optarg;
+				break;
+			
+			case 'h':
+				helpMessage();
+				break;
+				
+			case '?':
+				/* getopt_long already printed an error message. */
+				break;
+		
+			default:
+				abort ();
+		}
+	}
+} //end optionProcessor
 
 //Core DSP processing chain.
 inline double processData(double newData) {
-	static double lastData;
+	
+	static float filteredValue=0;
+	filteredValue=newData;
 	
 	#ifdef VERBOSE
 	printf("%1.32f\n", newData);
 	#endif
 	
+	return filteredValue * 10000;
 } //end processData
 
 //Program entry point.
-int main (int argc, char *argv[], char **envp) {
+int main (int argc, char *argv[]) {
 	setvbuf(stdout,NULL,_IONBF, 0);		//Permits use of printf() where it would otherwise not produce output.
 
 	constructGlobalVariables();		//Immediately construct global variables.
 	
+	optionProcessor(argc, argv);			//Process command line arguments.
+	
 	// Code derrived from libsndfile examples. See the libsndfile directory for additional licensing details.
 	
 	SNDFILE *infile = NULL ;
-	SF_INFO sfinfo ;
+	SNDFILE *outfile = NULL;
+	
+	SF_INFO in_sfinfo ;
+	SF_INFO out_sfinfo ;
 	
 	// ArduinoDAQ/Mirage335BiosignalAmplifier data format. Also known as S32_LE .
-	sfinfo.channels		= 1 ;
-	sfinfo.format = SF_FORMAT_RAW | SF_FORMAT_PCM_32 | SF_ENDIAN_LITTLE;
+	in_sfinfo.channels		= 1 ;
+	in_sfinfo.format = SF_FORMAT_RAW | SF_FORMAT_PCM_32 | SF_ENDIAN_LITTLE;
+	
+	// Baudline data format. Also known as le32f .
+	out_sfinfo.channels		= 1 ;
+	out_sfinfo.format = SF_FORMAT_RAW | SF_FORMAT_FLOAT | SF_ENDIAN_LITTLE;
 	
 	
-	if ((infile = sf_open ("-", SFM_READ, &sfinfo)) == NULL) {
+	if ((infile = sf_open (programOptions.inFileName, SFM_READ, &in_sfinfo)) == NULL) {
 		printf ("Invalid input file.\n") ;
+		puts (sf_strerror (NULL)) ;
+		return ProcessOperationNotPermitted ;
+	}
+	
+	if ((outfile = sf_open ("-", SFM_WRITE, &out_sfinfo)) == NULL) {
+		printf ("Invalid output file.\n") ;
 		puts (sf_strerror (NULL)) ;
 		return ProcessOperationNotPermitted ;
 	}
 	
 	//CAUTION: BLOCK_SIZE may determine latency. Lower is better.
 	#define BLOCK_SIZE 4
-	double buf [1 * BLOCK_SIZE] ;
+	double readBuf [1 * BLOCK_SIZE] ;
+	double writeBuf [1 * BLOCK_SIZE];
 	int k, m, readcount ;
-	while ((readcount = sf_readf_double (infile, buf, BLOCK_SIZE)) > 0)
+	while ((readcount = sf_readf_double(infile, readBuf, BLOCK_SIZE)) > 0)
 	{	for (k = 0 ; k < readcount ; k++)
 		{	for (m = 0 ; m < 1 ; m++)
-				processData(buf [k * 1 + m]);
-			} ;
-		} ;
+				//Read data out to processing function (DSP chain) one double precision float at a time.
+				writeBuf[k * 1 + m] = processData(readBuf[k * 1 + m]);
+		}
+		
+		//Write out buffer to file.
+		sf_writef_double(outfile, writeBuf, readcount);
+	}
 	
 	sf_close (infile) ;
 	
