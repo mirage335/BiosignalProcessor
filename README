@@ -2,14 +2,20 @@ Copyright (C) 2014 mirage335
 See the end of the file for license conditions.
 See license.txt for BiosignalProcessor license conditions.
 
-__Usage__
+Host ("driver") software for the 24bit Data Acqusition (ArduinoDAQ) integrated 
 
+__Usage__
+First compile using build.sh, then launch the software using run.sh. Some machines may need /dev/ttyACM0 replaced with a different file name.
 
 __Design__
+Uses libsndfile to read data over USB , processes the data using filters, then outputs the data in a format compatible with the baudline visualization software.
 
+A direct form 2 IIR biquad filter has been implemented as a preprocessor macro for basic lowpass, highpass, bandpass, and notch filtering.
 
 __Safety__
+Same safety issues noted in the README for Mirage335BiosignalAmplifier apply while using this software for it. Surge suppression and power supply isolation are important requirements.
 
+No claim of liability is made by anyone. Your accident is your accident. Use common sense. If you don't understand the safety features and limitations, don't use this software or Mirage335BiosignalAmplifier.
 
 __Copyright__
 This file is part of BiosignalProcessor.

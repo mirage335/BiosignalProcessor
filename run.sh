@@ -28,5 +28,5 @@ getScriptAbsoluteFolder() {
 
 cd "$(getScriptAbsoluteFolder)"	#Start in script's own location.
 
-#./build.sh ; cat /dev/urandom | ./Release/src/BiosignalProcessor | baudline -stdin -format le32f -samplerate 150
-./build.sh ; stty -F /dev/ttyACM0 raw ; echo -n "" > /dev/ttyACM0 ; cat /dev/ttyACM0 | ./Release/src/BiosignalProcessor | baudline -stdin -format le32f -samplerate 150
+#cat /dev/urandom | ./Release/src/BiosignalProcessor | baudline -stdin -format le32f -samplerate 150
+stty -F /dev/ttyACM0 raw ; echo -n "" > /dev/ttyACM0 ; cat /dev/ttyACM0 | ./Release/src/BiosignalProcessor | baudline -stdin -format le32f -samplerate 150
