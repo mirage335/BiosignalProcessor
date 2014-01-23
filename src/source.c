@@ -64,8 +64,8 @@ typedef struct {
 //LABEL Global constructor functions.
 PROGRAM_OPTIONS createPROGRAM_OPTIONS() {
 	PROGRAM_OPTIONS prototypeProgramOptions;
-	prototypeProgramOptions.inFileName = "-";										//Standard input default.
-	prototypeProgramOptions.outFileName = "-";										//Standard output default.
+	prototypeProgramOptions.inFileName = "/dev/stdin";										//Standard input default.
+	prototypeProgramOptions.outFileName = "/dev/stdout";										//Standard output default.
 	return prototypeProgramOptions;
 } //end createPROGRAM_OPTIONS
 
@@ -232,13 +232,16 @@ inline double processData(double newData) {
 	
 	static double filteredData = 0;
 	
-	highOrderIIRbiquad(newData, filteredData, firstStateOne, firstStateTwo, 0.0004944331277135562, 0, -0.0004944331277135562, 0.29089453130818355, -0.9990111337445728, 100);
+	//Sample IIRbiquad filter implementation from early testing.
+	//highOrderIIRbiquad(newData, filteredData, firstStateOne, firstStateTwo, 0.0004944331277135562, 0, -0.0004944331277135562, 0.29089453130818355, -0.9990111337445728, 5);
 	
 	#ifdef VERBOSE
 	printf("%1.32f\n", newData);
 	#endif
 	
-	return filteredData * 1000000;
+	//Rate throttling can be implemented with a simple usleep() call.
+	//usleep(1);
+	return newData * 1000000;
 } //end processData
 
 void helpMessage() {
@@ -318,20 +321,27 @@ int main (int argc, char *argv[]) {
 	SF_INFO out_sfinfo ;
 	
 	// ArduinoDAQ/Mirage335BiosignalAmplifier data format. Also known as S32_LE .
-	in_sfinfo.channels		= 1 ;
+	in_sfinfo.channels = 1 ;
+	in_sfinfo.samplerate = 150;
 	in_sfinfo.format = SF_FORMAT_RAW | SF_FORMAT_PCM_32 | SF_ENDIAN_LITTLE;
 	
 	// Baudline data format. Also known as le32f .
-	out_sfinfo.channels		= 1 ;
+	out_sfinfo.channels = 1 ;
+	in_sfinfo.samplerate = 150;
 	out_sfinfo.format = SF_FORMAT_RAW | SF_FORMAT_FLOAT | SF_ENDIAN_LITTLE;
 	
-	
-	if ((infile = sf_open (programOptions.inFileName, SFM_READ, &in_sfinfo)) == NULL) {
+	//if ((infile = sf_open_fd (stdin, SFM_READ, &in_sfinfo, 1)) == NULL) {
+	//if ((infile = sf_open_fd (STDIN_FILENO, SFM_READ, &in_sfinfo, 1)) == NULL) {
+	//if ((infile = sf_open_fd (open(programOptions.inFileName, O_RDONLY), SFM_READ, &in_sfinfo, 1)) == NULL) {
+ 	if ((infile = sf_open (programOptions.inFileName, SFM_READ, &in_sfinfo)) == NULL) {
 		printf ("Invalid input file.\n") ;
 		puts (sf_strerror (NULL)) ;
 		return ProcessOperationNotPermitted ;
 	}
 	
+	//if ((outfile = sf_open_fd (stdout, SFM_WRITE, &out_sfinfo, 1)) == NULL) {
+	//if ((outfile = sf_open_fd (STDOUT_FILENO, SFM_WRITE, &out_sfinfo, 1)) == NULL) {
+	//if ((outfile = sf_open_fd (open(programOptions.outFileName, O_WRONLY), SFM_WRITE, &out_sfinfo, 1)) == NULL) {
 	if ((outfile = sf_open (programOptions.outFileName, SFM_WRITE, &out_sfinfo)) == NULL) {
 		printf ("Invalid output file.\n") ;
 		puts (sf_strerror (NULL)) ;
@@ -343,6 +353,7 @@ int main (int argc, char *argv[]) {
 	double readBuf [1 * BLOCK_SIZE] ;
 	double writeBuf [1 * BLOCK_SIZE];
 	int k, m, readcount ;
+	
 	while ((readcount = sf_readf_double(infile, readBuf, BLOCK_SIZE)) > 0)
 	{	for (k = 0 ; k < readcount ; k++)
 		{	for (m = 0 ; m < 1 ; m++)
@@ -354,6 +365,7 @@ int main (int argc, char *argv[]) {
 	}
 	
 	sf_close (infile) ;
+	sf_close (outfile) ;
 	
 	return ProcessNoError;			//Program finished without fatal errors or exit statement.
 } //end main

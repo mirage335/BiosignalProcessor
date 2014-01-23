@@ -28,6 +28,5 @@ getScriptAbsoluteFolder() {
 
 cd "$(getScriptAbsoluteFolder)"	#Start in script's own location.
 
-#./build.sh ; cat /dev/urandom | ./Release/src/OutputObjectName | baudline -stdin -format le32f -samplerate 100
-./build.sh ; cat /dev/urandom | ./Release/src/OutputObjectName
-#./build.sh ;./Release/src/OutputObjectName -i ../SampleAudio/sampleAudio | baudline -stdin -format le32f -samplerate 100
+#./build.sh ; cat /dev/urandom | ./Release/src/OutputObjectName | baudline -stdin -format le32f -samplerate 150
+./build.sh ; stty -F /dev/ttyACM0 raw ; echo -n "" > /dev/ttyACM0 ; cat /dev/ttyACM0 | ./Release/src/OutputObjectName | baudline -stdin -format le32f -samplerate 150
