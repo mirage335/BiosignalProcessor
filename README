@@ -2,7 +2,7 @@ Copyright (C) 2014 mirage335
 See the end of the file for license conditions.
 See license.txt for BiosignalProcessor license conditions.
 
-Host ("driver") software for the 24bit Data Acqusition (ArduinoDAQ) integrated 
+Host ("driver") software for the 24bit Data Acqusition (ArduinoDAQ) integrated into Mirage335BiosignalAmplifier. See http://mirage335.dyndns.org/wiki/Mirage335BiosignalAmp .
 
 __Usage__
 First compile using build.sh, then launch the software using run.sh. Some machines may need /dev/ttyACM0 replaced with a different file name.
