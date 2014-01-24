@@ -28,5 +28,4 @@ getScriptAbsoluteFolder() {
 
 cd "$(getScriptAbsoluteFolder)"	#Start in script's own location.
 
-#cat /dev/urandom | ./Release/src/BiosignalProcessor | baudline -stdin -format le32f -samplerate 150
-stty -F /dev/ttyACM0 raw ; echo -n "" > /dev/ttyACM0 ; cat /dev/ttyACM0 | ./Release/src/BiosignalProcessor | tee ./dataLog | baudline -stdin -format le32f -samplerate 150
+cat ./dataLog | baudline -stdin -format le32f -samplerate 150
